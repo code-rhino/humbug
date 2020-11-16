@@ -1,0 +1,340 @@
+     /**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css2?family=Raleway);
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@900);
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Raleway', sans-serif;
+$mainColor: #666666;
+$headingFont: 'Raleway', Impact, sans-serif;
+$headingColor: #666666;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$linkColor: #00008B;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.title-slide{
+	padding-top: 20%;
+	padding-left: 10%;
+	text-align: left;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4{
+	color:#ffb600;
+	font-weight:900;
+}
+
+.reveal h2 {
+	margin: 0 0 52px 0;
+}
+
+
+.black{
+	color:black;
+}
+
+.instructor-image {
+	height: 200px;
+	width: 200px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+    top: 0%;
+	right: 1.5%;
+	border-style: solid;
+	border-color:#ffb600;
+	border-width:2px;
+
+}
+
+section {
+	height: 100vh;
+}
+
+div.border {
+	width: 90%;
+	height: 90%;
+	margin: 2%;
+	border-width:5px;
+	border-radius: 30px;  
+	border-style:dotted;
+	border-color:#ffb600;
+}
+
+.l-double {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+ }
+
+ .l-multiple {
+	display: flex;
+	justify-content: space-around;
+  }
+
+  .livecode {
+	display: grid;
+	grid-gap: 0.5em;
+	margin: 0.5em;
+	padding: 0;
+	height: 100%;
+
+	.result {
+	  max-height: 100%;
+	  overflow-y: scroll;
+	  border: 1px dashed $headingColor;
+	}
+
+	.col-right{
+		float: right;
+	}
+  
+	.code {
+	  text-align: left;
+	  font-family: 'Dank Mono', monospace;
+	  font-size: 75%;
+	  color: #efdcbc;
+	  background-color: #3f3f3f;
+	  padding: 0.5em;
+	  margin-right: 2.5em;
+	  border-radius: 0.25em;
+	  overflow-y: scroll;
+	}
+  }
+  
+  .code-editor {
+	display: block;
+	height: 100%;
+	white-space: pre-wrap;
+  }
+
+  .livecode-2p {
+	grid-template-columns: 48% 48%;
+	align-items: center;  
+
+	grid-template-rows: 1fr;
+	max-height: 65vh;
+  }
+
+  .livecode-3p {
+	grid-template-columns: 50% 50%;
+	grid-template-rows: max-content 1fr;
+	grid-template-areas: 'a b'
+						 'a c';
+	max-height: 70vh;
+  
+	.markup {
+	  grid-area: b;
+	}
+  
+	.result {
+	  grid-area: a;
+	}
+  
+	.code {
+	  grid-area: c;
+	}
+  }
+
+  .reveal .slides .main {
+	  text-align: left;
+	  padding-left: 0.25em;
+  }
+
+.main {
+	padding-left: 0.25em;
+}
+
+.main ul {
+	padding-left: 3.50em;
+}
+
+.main h2, .main h3, .main h4{
+	text-align: center;
+}
+
+.title-slide h2, .title-slide h3, .title-slide h4{
+	color: #666666;
+	text-align: left;
+	font-weight:normal;
+}
+
+.title-slide h3, .title-slide h4{
+	color: #737070;
+	text-align: left;
+	font-weight:normal;
+}
+
+.main .title-slide p{
+	color: #a7a3a3;
+	padding-left: 0em;
+	padding-bottom: 0em;
+	width:100%;
+	text-align: left;
+}
+
+.main p {
+	padding-left: 1.25em;
+	padding-bottom: 1.25em;
+	width: 90%;
+	text-align: left;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 15px;
+    overflow: auto;
+    max-height: 650px;
+    word-wrap: normal;
+}
+
+.reveal .hljs {
+	padding-top: 0.5em;
+	border-radius: 30px;  
+}
+
+.reveal .hljs.fullpage  {
+	min-height: 500px;
+	max-height: 500px;
+	padding-top: 0.5em;
+	border-radius: 30px;  
+}
+
+
+.col {
+	height: 100%;
+	width: 90%;
+	margin: 0 auto;
+	overflow-y: scroll;
+	border-width:5px;
+	border-radius: 30px;  
+	border-style:dotted;
+	border-color:#ffb600;	
+	align-self: center;
+	justify-self: center;	
+}
+
+.col-code-sample {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	overflow-y: scroll;	
+	align-self: center;
+	justify-self: center;	
+}
+.col-code-sample ul {
+	padding-left: 0.50em;
+}
+
+.col-code-sample li {
+	padding-bottom: 1.50em;
+	font-size: xx-large;
+	list-style-type: none;
+}
+
+.col-code-sample p{
+	font-size: x-large;
+}
+
+.col ul {
+	padding-left: 0.50em;
+  }
+
+.reveal blockquote {
+	color: white;
+	background: #666666;
+	border-radius: 30px; 
+	font-style: normal;
+	text-align: center;
+}
+
+.info-splash{
+	background:#ffb600ff;
+	position: relative;
+}
+
+.info-splash-content
+{
+	position: absolute;
+	bottom: 300px;
+	left: 0;
+}
+
+.info-splash h1 , .info-splash h2{
+	color: black;
+	text-align: left;
+	padding-left: 0.5em;
+
+}
+
+.info-splash h3 {
+	color: white;
+	text-align: left;
+	padding-left: 0.5em;
+
+}
+
+.corner-image
+{
+	width: 150px;
+	position: absolute;
+    top: 0%;
+	right: 1.5%;
+}
+
+.slide-with-border{
+	width: 90%;
+	height: 90%;
+	margin: auto;
+	border-width:5px;
+	border-radius: 30px;  
+	border-style:dotted;
+	border-color:#ffb600;
+}
+
+.reveal img.display-large-image{
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.reveal img.display-small-image{
+	max-width: 300px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
